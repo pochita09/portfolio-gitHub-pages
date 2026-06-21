@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name — AI ツール制作</title>
+  <title>Akihiro Takahashi — AI ツール制作</title>
   <meta name="description" content="AIで業務の無駄を削る小さなツールを作っています。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html" data-site-name>Your Name</a>
+      <a class="site-header__logo" href="index.html" data-site-name>Akihiro Takahashi</a>
       <nav class="site-nav">
         <a href="#tools">Tools</a>
         <a href="about.html">About</a>
@@ -29,11 +29,12 @@
     <section class="profile">
       <div class="container">
         <div class="profile__inner">
-          <div class="profile__photo" aria-hidden="true"></div>
+          <div class="profile__photo">
+            <img src="images/ChatGPT Image 2026年6月21日 11_45_14.png" alt="Akihiro Takahashi" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;">
+          </div>
           <div class="profile__body">
             <h1 class="profile__title" id="profile-title">AIで、現場の仕事を速くする。</h1>
             <p class="profile__bio" id="profile-bio"></p>
-            <a class="profile__contact" href="mailto:your@email.com" id="profile-contact">お問い合わせ →</a>
           </div>
         </div>
       </div>
@@ -60,7 +61,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__inner">
-        <p class="site-footer__copy">© <span id="copy-year"></span> <span data-site-name>Your Name</span></p>
+        <p class="site-footer__copy">© <span id="copy-year"></span> <span data-site-name>Akihiro Takahashi</span></p>
         <p class="site-footer__note">このサイトもバイブコーディングで作っています</p>
       </div>
     </div>
@@ -74,15 +75,23 @@
       });
       document.getElementById('profile-title').textContent = SITE.tagline;
       document.getElementById('profile-bio').textContent = SITE.about;
-      document.getElementById('profile-contact').href = 'mailto:' + SITE.email;
-      document.getElementById('copy-year').textContent = new Date().getFullYear();
+document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+      function buildThumb(tool) {
+        if (tool.thumbImg) {
+          return '<div class="tool-item__thumb" style="background:none;padding:0;overflow:hidden;">'
+            + '<img src="' + tool.thumbImg + '" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">'
+            + '</div>';
+        }
+        var thumbStyle = tool.thumb ? ' style="background:' + tool.thumb + '"' : '';
+        return '<div class="tool-item__thumb"' + thumbStyle + '></div>';
+      }
 
       var featuredEl = document.getElementById('featured-tools');
       TOOLS.filter(function (t) { return t.featured; }).forEach(function (tool) {
-        var thumbStyle = tool.thumb ? ' style="background:' + tool.thumb + '"' : '';
         featuredEl.insertAdjacentHTML('beforeend',
           '<a class="tool-item" href="' + tool.href + '">'
-          + '<div class="tool-item__thumb"' + thumbStyle + '></div>'
+          + buildThumb(tool)
           + '<h3 class="tool-item__name">' + tool.name + '</h3>'
           + '<p class="tool-item__desc">' + tool.description + '</p>'
           + '</a>'
@@ -91,10 +100,9 @@
 
       var otherEl = document.getElementById('other-tools');
       TOOLS.filter(function (t) { return !t.featured; }).forEach(function (tool) {
-        var thumbStyle = tool.thumb ? ' style="background:' + tool.thumb + '"' : '';
         otherEl.insertAdjacentHTML('beforeend',
           '<a class="tool-item" href="' + tool.href + '">'
-          + '<div class="tool-item__thumb"' + thumbStyle + '></div>'
+          + buildThumb(tool)
           + '<h3 class="tool-item__name">' + tool.name + '</h3>'
           + '<p class="tool-item__desc">' + tool.description + '</p>'
           + '</a>'

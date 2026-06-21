@@ -140,9 +140,14 @@ button { font-family: inherit; }
   aspect-ratio: 4 / 3;
   background: var(--thumb);
   margin-bottom: 1.25rem;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, box-shadow 0.3s, transform 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10), 0 1px 3px rgba(0,0,0,0.08);
 }
-.tool-item:hover .tool-item__thumb { opacity: 0.72; }
+.tool-item:hover .tool-item__thumb {
+  opacity: 0.72;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.16), 0 3px 8px rgba(0,0,0,0.10);
+  transform: translateY(-3px);
+}
 .tool-item__name {
   font-size: 1.375rem; /* 22px */
   font-weight: 500;

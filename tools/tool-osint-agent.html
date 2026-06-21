@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>情報収集エージェント</title>
+  <meta name="description" content="AIベンダーの新着情報を自動で収集し、要約してメール通知とスプレッドシートに記録します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="../index.html">Akihiro Takahashi</a>
+      <nav class="site-nav">
+        <a href="../index.html#tools">Tools</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <a class="back-link" href="../index.html#tools">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Tools
+      </a>
+
+      <div class="tool-hero">
+        <p class="tool-hero__category">情報収集 / 自動化</p>
+        <h1 class="tool-hero__title">情報収集エージェント</h1>
+        <p class="tool-hero__desc">AIベンダーの新着情報をRSSで自動収集し、AIが重要なものだけを選別・要約してメールとスプレッドシートに届けます。</p>
+      </div>
+
+      <div class="demo-wrap">
+        <div class="demo-area">
+          <img src="../images/mosaic_image__1_.png" alt="情報収集エージェント 出力サンプル" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+
+      <div class="tool-content">
+
+        <div class="tool-section">
+          <p class="tool-section__label">概要</p>
+          <div class="point-list">
+            <div class="point-item">
+              <p class="point-item__label">実行頻度</p>
+              <p class="point-item__value">1日3回、自動実行</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">対象情報</p>
+              <p class="point-item__value">AIベンダーの新モデル・新機能・研究発表</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">出力先</p>
+              <p class="point-item__value">Gmail通知 ＋ スプレッドシート記録</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">課題と解決</p>
+          <div class="before-after">
+            <div class="ba-box ba-box--before">
+              <p class="ba-box__label">Before</p>
+              <p class="ba-box__text">OpenAI・Anthropic・Google DeepMindなど複数社のニュースを自分でチェックしていると、見落としや確認漏れが発生。情報収集だけで毎日時間を取られていた。</p>
+            </div>
+            <div class="ba-box ba-box--after">
+              <p class="ba-box__label">After</p>
+              <p class="ba-box__text">エージェントが自動でRSSを巡回し、重要な記事だけを選別・日本語で要約してメール通知。読む価値のある情報だけが手元に届く。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">仕組み</p>
+          <div class="steps-list">
+            <div class="step-item">
+              <span class="step-item__num">01</span>
+              <span class="step-item__text">複数のRSSフィードから新着記事を取得し、前回実行以降の差分のみを抽出する</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">02</span>
+              <span class="step-item__text">タイトルと概要をAIに渡し、新モデル・新機能・価格改定・研究成果など重要な記事だけを選別。カテゴリと重要度を付与して1〜2行に要約する</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">03</span>
+              <span class="step-item__text">選別結果をHTMLメールでGmailに送信しつつ、スプレッドシートに1行ずつ追記。サーバー上でcronにより1日3回自動実行される</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">背景</p>
+          <p class="tool-section__body">AIの動向は変化が速く、気づいたら重要なアップデートを見逃していることが何度もあった。「どうせ毎日チェックするなら自動化できるはず」と思い、自分のために作ったツール。情報源・選別ルール・使用AIモデルはすべて設定ファイルに分離してあるので、テーマを追加するだけで監視対象を広げられる。</p>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">使用技術</p>
+          <div class="tech-list">
+            <span class="tech-list__item">Python</span>
+            <span class="tech-list__item">Gemini API</span>
+            <span class="tech-list__item">Google Sheets API</span>
+            <span class="tech-list__item">Gmail SMTP</span>
+            <span class="tech-list__item">RSS / feedparser</span>
+            <span class="tech-list__item">cron（Hetzner VPS）</span>
+            <span class="tech-list__item">バイブコーディング</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">© <span id="copy-year"></span> Akihiro Takahashi</p>
+        <p class="site-footer__note">このサイトもバイブコーディングで作っています</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+    var playBtn = document.getElementById('play-btn');
+    var thumb   = document.getElementById('demo-thumb');
+    var video   = document.getElementById('demo-video');
+    if (playBtn) {
+      playBtn.addEventListener('click', function () {
+        thumb.style.display = 'none';
+        video.style.display = 'block';
+        video.play();
+      });
+    }
+  </script>
+
+</body>
+</html>

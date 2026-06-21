@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>育休制度サポートAI（RAG）</title>
+  <meta name="description" content="就業規則・マニュアルなどのPDFを読み込ませると、「○○ってどうなってるの？」に即答するAIヘルプデスクを作れます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="../index.html">Akihiro Takahashi</a>
+      <nav class="site-nav">
+        <a href="../index.html#tools">Tools</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <a class="back-link" href="../index.html#tools">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Tools
+      </a>
+
+      <div class="tool-hero">
+        <p class="tool-hero__category">社内文書 / ヘルプデスク</p>
+        <h1 class="tool-hero__title">育休制度サポートAI（RAG）</h1>
+        <p class="tool-hero__desc">就業規則・マニュアルなどのPDFを読み込ませると、「○○ってどうなってるの？」に即答するAIヘルプデスクを作れます。</p>
+      </div>
+
+      <div class="demo-wrap">
+        <div class="demo-area" style="position:relative;padding-top:56.25%;height:0;overflow:hidden;">
+          <a href="https://youtu.be/m-RAh11qkL4" target="_blank" rel="noopener noreferrer"
+             style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;">
+            <img src="https://img.youtube.com/vi/m-RAh11qkL4/hqdefault.jpg"
+                 alt="育休制度サポートAI デモ動画"
+                 style="width:100%;height:100%;object-fit:cover;opacity:0.85;">
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+                         background:rgba(0,0,0,0.75);border-radius:50%;width:64px;height:64px;
+                         display:flex;align-items:center;justify-content:center;">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <path d="M10 7.5L21 14L10 20.5V7.5Z" fill="#fff"/>
+              </svg>
+            </span>
+            <span style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
+                         background:rgba(0,0,0,0.6);color:#fff;font-size:12px;padding:4px 10px;
+                         border-radius:4px;white-space:nowrap;">YouTube で見る</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-content">
+
+        <div class="tool-section">
+          <p class="tool-section__label">概要</p>
+          <div class="point-list">
+            <div class="point-item">
+              <p class="point-item__label">検索時間</p>
+              <p class="point-item__value">数十分 → 数秒</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">対象文書</p>
+              <p class="point-item__value">就業規則・マニュアル・各種規定</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">操作方法</p>
+              <p class="point-item__value">チャットで質問するだけ</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">課題と解決</p>
+          <div class="before-after">
+            <div class="ba-box ba-box--before">
+              <p class="ba-box__label">Before</p>
+              <p class="ba-box__text">「有給って何日から取れるんだっけ」という疑問のたびに、分厚い就業規則や複数のマニュアルを読み返す。担当者への問い合わせが積み重なり、本来業務が止まる。</p>
+            </div>
+            <div class="ba-box ba-box--after">
+              <p class="ba-box__label">After</p>
+              <p class="ba-box__text">チャットに「有給はいつから取れますか？」と打つだけで、資料に基づいた正確な答えが返ってくる。資料に書いていないことは「記載がありません」と正直に答えるので、誤情報を信じるリスクがない。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">使い方</p>
+          <div class="steps-list">
+            <div class="step-item">
+              <span class="step-item__num">01</span>
+              <span class="step-item__text">社内のPDF資料をシステムに読み込ませる（初回のみ）</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">02</span>
+              <span class="step-item__text">チャット画面を開き、知りたいことを普通の言葉で質問する</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">03</span>
+              <span class="step-item__text">資料に基づいた回答を受け取る。不明な場合は「記載がありません」と返る</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">背景</p>
+          <p class="tool-section__body">「就業規則を読む時間がなくて、結局いつも総務に聞いてしまう」という声を複数の会社で聞きました。資料は存在するのに活用されていない、という状況を解決したくて作りました。どの業種・どの会社の資料でも同じ仕組みで動くため、汎用性の高いデモとして使っています。</p>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">使用技術</p>
+          <div class="tech-list">
+            <span class="tech-list__item">Dify</span>
+            <span class="tech-list__item">RAG（文書検索AI）</span>
+            <span class="tech-list__item">LLM</span>
+            <span class="tech-list__item">バイブコーディング</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">© <span id="copy-year"></span> Akihiro Takahashi</p>
+        <p class="site-footer__note">このサイトもバイブコーディングで作っています</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>

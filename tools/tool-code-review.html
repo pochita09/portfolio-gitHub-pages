@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コード・セキュリティレビュー体制</title>
+  <meta name="description" content="/review 1本で4領域を同時チェック。自作スラッシュコマンドと公式 /security-review を束ねた、暴走しないレビュー体制。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    code {
+      font-family: 'DM Mono', 'Fira Mono', 'Courier New', monospace;
+      font-size: 0.9em;
+      background: rgba(0,0,0,0.06);
+      padding: 0.1em 0.4em;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="../index.html">Akihiro Takahashi</a>
+      <nav class="site-nav">
+        <a href="../index.html#tools">Tools</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <a class="back-link" href="../index.html#tools">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Tools
+      </a>
+
+      <div class="tool-hero">
+        <p class="tool-hero__category">開発支援 / コードレビュー</p>
+        <h1 class="tool-hero__title">コード・セキュリティレビュー体制</h1>
+        <p class="tool-hero__desc">/review 1本で4領域を同時チェック。自作スラッシュコマンド3本と公式 /security-review を束ね、コスト・データ・ロジック・セキュリティのリスクを報告します。</p>
+      </div>
+
+      <div class="demo-wrap">
+        <div class="demo-area" style="padding:0;overflow:hidden;">
+          <img src="../images/review-demo.png" alt="コード・セキュリティレビュー体制 デモ画面" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+
+      <div class="tool-content">
+
+        <div class="tool-section">
+          <p class="tool-section__label">概要</p>
+          <div class="point-list">
+            <div class="point-item">
+              <p class="point-item__label">チェック領域</p>
+              <p class="point-item__value">セキュリティ・コスト・データ・ロジックの4領域</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">起動方法</p>
+              <p class="point-item__value">/review 1本で4コマンドを一括実行。full オプションで全件/差分を切り替え可能</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">動作保証</p>
+              <p class="point-item__value">読むだけ・直さない設計（暴走しない）</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">課題と解決</p>
+          <div class="before-after">
+            <div class="ba-box ba-box--before">
+              <p class="ba-box__label">Before</p>
+              <p class="ba-box__text">AIにコードを書かせるほど、コスト爆発・データ破壊・ロジックバグのリスクが見えにくくなる。汎用レビューツールはセキュリティ中心で、これらの観点は抜け落ちがちだった。</p>
+            </div>
+            <div class="ba-box ba-box--after">
+              <p class="ba-box__label">After</p>
+              <p class="ba-box__text">節目に /review と打つだけで4領域を同時チェック。AIは報告するだけで修正しないため、暴走ゼロ。<code>/review</code> で差分のみ、<code>/review full</code> で全件と使い分けられる。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">使い方</p>
+          <div class="steps-list">
+            <div class="step-item">
+              <span class="step-item__num">01</span>
+              <span class="step-item__text">作業の節目に <code>/review</code> を打つ（内部で /cost-review・/data-review・/logic-review・/security-review が順番に走る）</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">02</span>
+              <span class="step-item__text">AIが4領域のリスクをまとめて報告する（修正・差し戻しは一切しない）</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">03</span>
+              <span class="step-item__text">報告を確認し、修正するかどうかを自分で判断する</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">04</span>
+              <span class="step-item__text">大きな節目は <code>/review full</code> で全件チェック、普段は <code>/review</code> だけで差分のみ軽く回す</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">背景</p>
+          <p class="tool-section__body">AIにコードを書かせる量が増えるほど、コスト爆発・データ破壊・ロジックバグのリスクが積み上がっていくと感じていました。公式ツールはセキュリティ中心で、これらの観点は見てくれない。そこで「4領域を独立したコマンドに分けて、手で打ったときだけ動く仕組み」を自作しました。さらに /review 1本に束ねることで、打つ手間も最小化。相互依存なし・自動起動なし・修正なし、の三原則は変えずに、運用の摩擦だけを削りました。</p>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">使用技術</p>
+          <div class="tech-list">
+            <span class="tech-list__item">Claude Code</span>
+            <span class="tech-list__item">スラッシュコマンド（SKILL）</span>
+            <span class="tech-list__item">git diff</span>
+            <span class="tech-list__item">バイブコーディング</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">© <span id="copy-year"></span> Akihiro Takahashi</p>
+        <p class="site-footer__note">このサイトもバイブコーディングで作っています</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+    var playBtn = document.getElementById('play-btn');
+    var thumb   = document.getElementById('demo-thumb');
+    var video   = document.getElementById('demo-video');
+    if (playBtn) {
+      playBtn.addEventListener('click', function () {
+        thumb.style.display = 'none';
+        video.style.display = 'block';
+        video.play();
+      });
+    }
+  </script>
+
+</body>
+</html>

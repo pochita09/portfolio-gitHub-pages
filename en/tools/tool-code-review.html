@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code & Security Review System</title>
+  <meta name="description" content="One /review command checks 4 dimensions — security, cost, data, and logic — without making any changes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    code {
+      font-family: 'DM Mono', 'Fira Mono', 'Courier New', monospace;
+      font-size: 0.9em;
+      background: rgba(0,0,0,0.06);
+      padding: 0.1em 0.4em;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="../index.html">Akihiro Takahashi</a>
+      <nav class="site-nav">
+        <a href="../index.html#tools">Tools</a>
+        <a href="../../about.html">About</a>
+        <a href="../../contact.html">Contact</a>
+        <span class="lang-switch"><a href="../../tools/tool-code-review.html">JA</a> | EN</span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <a class="back-link" href="../index.html#tools">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Tools
+      </a>
+
+      <div class="tool-hero">
+        <p class="tool-hero__category">Dev Support / Code Review</p>
+        <h1 class="tool-hero__title">Code & Security Review System</h1>
+        <p class="tool-hero__desc">One /review command runs 4 checks simultaneously. Three custom slash commands plus the official /security-review cover cost, data, logic, and security risks — without touching your code.</p>
+      </div>
+
+      <div class="demo-wrap">
+        <div class="demo-area" style="padding:0;overflow:hidden;">
+          <img src="../../images/review-demo.png" alt="Code & Security Review System demo" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+
+      <div class="tool-content">
+
+        <div class="tool-section">
+          <p class="tool-section__label">Overview</p>
+          <div class="point-list">
+            <div class="point-item">
+              <p class="point-item__label">Coverage</p>
+              <p class="point-item__value">Security · Cost · Data · Logic — 4 dimensions</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">How to trigger</p>
+              <p class="point-item__value">/review runs all 4 commands at once. Add "full" to switch between diff-only and full scan</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">Safety guarantee</p>
+              <p class="point-item__value">Read-only by design — AI reports, never modifies</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">Problem & Solution</p>
+          <div class="before-after">
+            <div class="ba-box ba-box--before">
+              <p class="ba-box__label">Before</p>
+              <p class="ba-box__text">The more code AI writes, the harder it is to spot cost explosions, data corruption, and logic bugs. Generic review tools focus on security and miss everything else.</p>
+            </div>
+            <div class="ba-box ba-box--after">
+              <p class="ba-box__label">After</p>
+              <p class="ba-box__text">Type /review at any checkpoint and get all 4 dimensions checked at once. AI only reports — it never modifies. Use <code>/review</code> for diff-only, <code>/review full</code> for a full scan.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">How It Works</p>
+          <div class="steps-list">
+            <div class="step-item">
+              <span class="step-item__num">01</span>
+              <span class="step-item__text">Type <code>/review</code> at any checkpoint (internally runs /cost-review, /data-review, /logic-review, and /security-review in sequence)</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">02</span>
+              <span class="step-item__text">AI reports risks across all 4 dimensions — no modifications, no rollbacks</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">03</span>
+              <span class="step-item__text">Review the report and decide what to fix yourself</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">04</span>
+              <span class="step-item__text">Use <code>/review full</code> at major milestones for a complete scan; use <code>/review</code> day-to-day for a lightweight diff check</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">Background</p>
+          <p class="tool-section__body">The more AI writes code, the more cost explosions, data corruption, and logic bugs accumulate — and official tools only cover security. So I split the concerns into four independent commands that only fire when you manually invoke them. Bundling them into /review removed the friction of running each one separately. Three principles stayed fixed: no interdependencies, no auto-trigger, no modifications.</p>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">Tech Stack</p>
+          <div class="tech-list">
+            <span class="tech-list__item">Claude Code</span>
+            <span class="tech-list__item">Slash Commands (SKILL)</span>
+            <span class="tech-list__item">git diff</span>
+            <span class="tech-list__item">Vibe Coding</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">© <span id="copy-year"></span> Akihiro Takahashi</p>
+        <p class="site-footer__note">This site is also built with vibe coding</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copy-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

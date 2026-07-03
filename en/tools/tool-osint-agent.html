@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI News Monitor</title>
+  <meta name="description" content="Automatically collects AI vendor updates via RSS, filters for what matters, and delivers summaries to email and spreadsheet.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="../index.html">Akihiro Takahashi</a>
+      <nav class="site-nav">
+        <a href="../index.html#tools">Tools</a>
+        <a href="../../about.html">About</a>
+        <a href="../../contact.html">Contact</a>
+        <span class="lang-switch"><a href="../../tools/tool-osint-agent.html">JA</a> | EN</span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <a class="back-link" href="../index.html#tools">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Tools
+      </a>
+
+      <div class="tool-hero">
+        <p class="tool-hero__category">Research / Automation</p>
+        <h1 class="tool-hero__title">AI News Monitor</h1>
+        <p class="tool-hero__desc">Automatically collects AI vendor updates via RSS, filters for what matters, and delivers summaries to email and spreadsheet — 3 times a day.</p>
+      </div>
+
+      <div class="demo-wrap">
+        <div class="demo-area">
+          <img src="../../images/mosaic_image__1_.png" alt="AI News Monitor output sample" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+
+      <div class="tool-content">
+
+        <div class="tool-section">
+          <p class="tool-section__label">Overview</p>
+          <div class="point-list">
+            <div class="point-item">
+              <p class="point-item__label">Frequency</p>
+              <p class="point-item__value">3 times a day, fully automated</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">Sources</p>
+              <p class="point-item__value">New models, features & research from AI vendors</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">Output</p>
+              <p class="point-item__value">Gmail digest + Google Sheets log</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">Problem & Solution</p>
+          <div class="before-after">
+            <div class="ba-box ba-box--before">
+              <p class="ba-box__label">Before</p>
+              <p class="ba-box__text">Manually checking OpenAI, Anthropic, Google DeepMind and more every day led to missed updates and wasted time on information that didn't matter.</p>
+            </div>
+            <div class="ba-box ba-box--after">
+              <p class="ba-box__label">After</p>
+              <p class="ba-box__text">The agent crawls RSS feeds automatically, filters for important articles, summarizes them, and sends an email digest. Only what's worth reading lands in your inbox.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">How It Works</p>
+          <div class="steps-list">
+            <div class="step-item">
+              <span class="step-item__num">01</span>
+              <span class="step-item__text">Fetch new articles from multiple RSS feeds and extract only items published since the last run</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">02</span>
+              <span class="step-item__text">Pass titles and summaries to AI, which selects only important articles (new models, features, pricing changes, research), assigns a category and importance score, and summarizes each in 1–2 lines</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">03</span>
+              <span class="step-item__text">Send results as an HTML email to Gmail and append each item to a Google Sheet — all triggered automatically by cron 3 times a day</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">Background</p>
+          <p class="tool-section__body">AI moves fast, and I kept missing important updates. "I check this every day anyway — I should automate it." Sources, filtering rules, and the AI model are all in a config file, so adding a new topic takes seconds.</p>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">Tech Stack</p>
+          <div class="tech-list">
+            <span class="tech-list__item">Python</span>
+            <span class="tech-list__item">Gemini API</span>
+            <span class="tech-list__item">Google Sheets API</span>
+            <span class="tech-list__item">Gmail SMTP</span>
+            <span class="tech-list__item">RSS / feedparser</span>
+            <span class="tech-list__item">cron (Hetzner VPS)</span>
+            <span class="tech-list__item">Vibe Coding</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">© <span id="copy-year"></span> Akihiro Takahashi</p>
+        <p class="site-footer__note">This site is also built with vibe coding</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copy-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

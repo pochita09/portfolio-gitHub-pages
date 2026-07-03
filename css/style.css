@@ -400,3 +400,7 @@ button { font-family: inherit; }
   .tool-content { padding: 3rem 0; }
   .site-footer__inner { flex-direction: column; }
 }
+
+.lang-switch { font-size: 0.78rem; color: var(--muted); margin-left: 0.25rem; }
+.lang-switch a { color: var(--text); text-decoration: none; }
+.lang-switch a:hover { opacity: 0.65; }

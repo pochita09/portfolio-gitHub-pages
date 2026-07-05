@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Summarizer</title>
+  <meta name="description" content="Just send a YouTube URL — AI summarizes the video and saves it to a spreadsheet automatically.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="../index.html">Akihiro Takahashi</a>
+      <nav class="site-nav">
+        <a href="../index.html#tools">Tools</a>
+        <a href="../../about.html">About</a>
+        <a href="../../contact.html">Contact</a>
+        <span class="lang-switch"><a href="../../tools/tool-youtube-summarizer.html">JA</a> | EN</span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <a class="back-link" href="../index.html#tools">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Tools
+      </a>
+
+      <div class="tool-hero">
+        <p class="tool-hero__category">YouTube / Summarization</p>
+        <h1 class="tool-hero__title">YouTube Summarizer</h1>
+        <p class="tool-hero__desc">Just send a YouTube URL — AI summarizes the video and saves it to a spreadsheet automatically.</p>
+      </div>
+
+      <div class="demo-wrap">
+        <div class="demo-area" style="position:relative;padding-top:56.25%;height:0;overflow:hidden;">
+          <a href="https://youtu.be/jT2KuvkXFLs" target="_blank" rel="noopener noreferrer"
+             style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;">
+            <img src="https://img.youtube.com/vi/jT2KuvkXFLs/hqdefault.jpg"
+                 alt="YouTube Summarizer demo"
+                 style="width:100%;height:100%;object-fit:cover;opacity:0.85;">
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+                         background:rgba(0,0,0,0.75);border-radius:50%;width:64px;height:64px;
+                         display:flex;align-items:center;justify-content:center;">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <path d="M10 7.5L21 14L10 20.5V7.5Z" fill="#fff"/>
+              </svg>
+            </span>
+            <span style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
+                         background:rgba(0,0,0,0.6);color:#fff;font-size:12px;padding:4px 10px;
+                         border-radius:4px;white-space:nowrap;">Watch on YouTube</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-content">
+
+        <div class="tool-section">
+          <p class="tool-section__label">Overview</p>
+          <p class="tool-section__body">Enter a YouTube video URL into the form, and the tool automatically fetches the transcript, has Claude (AI) summarize the content, and saves it as a new row in Google Sheets. No need to watch the video from start to finish — the key points are captured as text in seconds.</p>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">What Gets Saved</p>
+          <div class="point-list">
+            <div class="point-item">
+              <p class="point-item__label">One-line summary</p>
+              <p class="point-item__value">Grasp the whole video in a single sentence</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">5 key points</p>
+              <p class="point-item__value">Main takeaways as a bulleted list</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">3 keywords</p>
+              <p class="point-item__value">Tags describing the content</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">Timestamp</p>
+              <p class="point-item__value">A record of when it was processed</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">Problem & Solution</p>
+          <div class="before-after">
+            <div class="ba-box ba-box--before">
+              <p class="ba-box__label">Before</p>
+              <p class="ba-box__text">Every time I researched reference videos or webinars, I had to watch 10–20 minute videos start to finish and take notes by hand. The more videos, the more time it took, and finding them again later was a hassle.</p>
+            </div>
+            <div class="ba-box ba-box--after">
+              <p class="ba-box__label">After</p>
+              <p class="ba-box__text">Just paste the video URL and send. In seconds, a one-line summary, 5 key points, and keywords appear in a spreadsheet. You can grasp the content without watching the video, and over time it builds into a searchable research asset.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">How It Works</p>
+          <div class="steps-list">
+            <div class="step-item">
+              <span class="step-item__num">01</span>
+              <span class="step-item__text">Enter a YouTube URL into the form</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">02</span>
+              <span class="step-item__text">Submit it</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">03</span>
+              <span class="step-item__text">The summary, key points, and keywords are automatically appended to Google Sheets</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">Key Feature</p>
+          <p class="tool-section__body">The entire flow — fetching the transcript, summarizing with AI, and saving to a spreadsheet — is fully automated with no manual steps. The input can be swapped for email or a form, and the output for Notion or Airtable, depending on the workflow. Beyond YouTube summarization, think of this as one example of a general automation pattern: fetch information, process it with AI, and save it wherever you need it.</p>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">Tech Stack</p>
+          <div class="tech-list">
+            <span class="tech-list__item">n8n</span>
+            <span class="tech-list__item">Claude API</span>
+            <span class="tech-list__item">yt-dlp</span>
+            <span class="tech-list__item">Google Sheets</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">© <span id="copy-year"></span> Akihiro Takahashi</p>
+        <p class="site-footer__note">This site is also built with vibe coding</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copy-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

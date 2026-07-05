@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube 要約ツール</title>
+  <meta name="description" content="YouTube URLを送るだけで、AIが動画を要約してスプレッドシートに自動保存">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="../index.html">Akihiro Takahashi</a>
+      <nav class="site-nav">
+        <a href="../index.html#tools">Tools</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <span class="lang-switch">JA | <a href="../en/tools/tool-youtube-summarizer.html">EN</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <a class="back-link" href="../index.html#tools">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Tools
+      </a>
+
+      <div class="tool-hero">
+        <p class="tool-hero__category">YouTube / 要約</p>
+        <h1 class="tool-hero__title">YouTube 要約ツール</h1>
+        <p class="tool-hero__desc">YouTube URLを送るだけで、AIが動画を要約してスプレッドシートに自動保存</p>
+      </div>
+
+      <div class="demo-wrap">
+        <div class="demo-area" style="position:relative;padding-top:56.25%;height:0;overflow:hidden;">
+          <a href="https://youtu.be/jT2KuvkXFLs" target="_blank" rel="noopener noreferrer"
+             style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;">
+            <img src="https://img.youtube.com/vi/jT2KuvkXFLs/hqdefault.jpg"
+                 alt="YouTube 要約ツール デモ動画"
+                 style="width:100%;height:100%;object-fit:cover;opacity:0.85;">
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+                         background:rgba(0,0,0,0.75);border-radius:50%;width:64px;height:64px;
+                         display:flex;align-items:center;justify-content:center;">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <path d="M10 7.5L21 14L10 20.5V7.5Z" fill="#fff"/>
+              </svg>
+            </span>
+            <span style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
+                         background:rgba(0,0,0,0.6);color:#fff;font-size:12px;padding:4px 10px;
+                         border-radius:4px;white-space:nowrap;">YouTube で見る</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-content">
+
+        <div class="tool-section">
+          <p class="tool-section__label">概要</p>
+          <p class="tool-section__body">YouTubeの動画URLをフォームに入力すると、字幕を自動取得し、Claude（AI）が内容を要約して、Google Sheetsに1行として保存します。動画を通しで視聴する必要がなく、要点だけを数十秒でテキスト化・蓄積できます。</p>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">出力される内容</p>
+          <div class="point-list">
+            <div class="point-item">
+              <p class="point-item__label">一文要約</p>
+              <p class="point-item__value">動画全体を1文で把握</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">要点5つ</p>
+              <p class="point-item__value">箇条書きで主要ポイントを整理</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">キーワード3語</p>
+              <p class="point-item__value">内容を表すタグ</p>
+            </div>
+            <div class="point-item">
+              <p class="point-item__label">処理日時</p>
+              <p class="point-item__value">いつ処理したかの記録</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">課題と解決</p>
+          <div class="before-after">
+            <div class="ba-box ba-box--before">
+              <p class="ba-box__label">Before</p>
+              <p class="ba-box__text">参考動画やウェビナーをリサーチするたびに、10分・20分の動画を通しで見て、手でメモを取っていた。本数が増えるほど時間がかかり、後から探すのも大変。</p>
+            </div>
+            <div class="ba-box ba-box--after">
+              <p class="ba-box__label">After</p>
+              <p class="ba-box__text">動画URLを貼って送信するだけ。数十秒で「一文要約・要点5つ・キーワード」がスプレッドシートに並ぶ。動画を見なくても内容を把握でき、蓄積すればそのまま検索可能なリサーチ資産になる。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">使い方</p>
+          <div class="steps-list">
+            <div class="step-item">
+              <span class="step-item__num">01</span>
+              <span class="step-item__text">フォームにYouTubeのURLを入力</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">02</span>
+              <span class="step-item__text">送信する</span>
+            </div>
+            <div class="step-item">
+              <span class="step-item__num">03</span>
+              <span class="step-item__text">Google Sheetsに要約・要点・キーワードが自動で追記される</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">このツールの強み</p>
+          <p class="tool-section__body">字幕取得 → AI要約 → スプレッドシート保存までを、人手を介さず一気通貫で自動化しています。入力をメールやフォーム、出力先をNotionやAirtableなど、業務に合わせて柔軟に差し替え可能です。YouTube要約に限らず、「情報を取得して、AIで加工して、任意の場所に保存する」という自動化フローの一例としてご覧ください。</p>
+        </div>
+
+        <div class="tool-section">
+          <p class="tool-section__label">使用技術</p>
+          <div class="tech-list">
+            <span class="tech-list__item">n8n</span>
+            <span class="tech-list__item">Claude API</span>
+            <span class="tech-list__item">yt-dlp</span>
+            <span class="tech-list__item">Google Sheets</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">© <span id="copy-year"></span> Akihiro Takahashi</p>
+        <p class="site-footer__note">このサイトもバイブコーディングで作っています</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copy-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

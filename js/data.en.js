@@ -11,6 +11,16 @@ const SITE = {
 
 const TOOLS = [
   {
+    id: 'tool-7',
+    featured: true,
+    href: 'tools/tool-youtube-summarizer.html',
+    thumb: null,
+    thumbImg: 'https://img.youtube.com/vi/jT2KuvkXFLs/hqdefault.jpg',
+    name: 'YouTube Summarizer',
+    category: 'YouTube / Summarization',
+    description: 'Just send a YouTube URL — AI summarizes the video and saves it to a spreadsheet automatically.',
+  },
+  {
     id: 'tool-1',
     featured: true,
     href: 'tools/tool-report-agent.html',

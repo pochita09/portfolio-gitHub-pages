@@ -12,6 +12,16 @@ const SITE = {
 const TOOLS = [
   /* ===== 代表ツール（featured: true） ===== */
   {
+    id: 'tool-7',
+    featured: true,
+    href: 'tools/tool-youtube-summarizer.html',
+    thumb: null,
+    thumbImg: 'https://img.youtube.com/vi/jT2KuvkXFLs/hqdefault.jpg',
+    name: 'YouTube 要約ツール',
+    category: 'YouTube / 要約',
+    description: 'YouTube URLを送るだけで、AIが動画を要約してスプレッドシートに自動保存',
+  },
+  {
     id: 'tool-1',
     featured: true,
     href: 'tools/tool-report-agent.html',
